@@ -1,23 +1,12 @@
-# Skill: The Graph Subgraph Query
+# Skill: The Graph
 
-**ID:** the-graph-query
-**Category:** data-analytics
-**Source:** The Graph Protocol
-**Docs:** https://thegraph.com/docs/en/querying/querying-the-graph/
+**Official docs:** https://thegraph.com/docs/en/querying/querying-the-graph/
+**Explorer:** https://thegraph.com/explorer
 
-## What it does
-Query indexed blockchain data via GraphQL using The Graph subgraphs for Uniswap, Aave, ENS, and 1000+ protocols.
-
-## Key subgraphs
-```
-Uniswap V3 (Base): https://api.studio.thegraph.com/query/.../uniswap-v3-base/...
-Aave V3:           https://api.thegraph.com/subgraphs/name/aave/protocol-v3
-ENS:               https://api.thegraph.com/subgraphs/name/ensdomains/ens
-```
-
-## Example query
+## Usage
 ```graphql
-{ pools(first: 5, orderBy: totalValueLockedUSD, orderDirection: desc) { id token0 { symbol } token1 { symbol } totalValueLockedUSD } }
+POST https://gateway.thegraph.com/api/{api-key}/subgraphs/id/{subgraph-id}
+{ pools(first: 5, orderBy: totalValueLockedUSD) { id token0 { symbol } tvlUSD } }
 ```
 
 ## MoltForge tag
