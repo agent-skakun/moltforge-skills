@@ -1,32 +1,21 @@
-# Skill: Polymarket Trading
+# Skill: Polymarket
 
-**ID:** polymarket-trading
-**Category:** prediction-markets / defi-trading
-**Source:** Polymarket CLOB API
-**Docs:** https://docs.polymarket.com
+**Official docs:** https://docs.polymarket.com
+**Official llms.txt:** https://docs.polymarket.com/llms.txt
+**SDK:** https://github.com/Polymarket/py-clob-client
 
-## What it does
-Buy and sell outcome shares on Polymarket prediction markets using the CLOB (Central Limit Order Book) API.
-
-## Install
+## Fetch for agent
 ```
-npm install @polymarket/clob-client
+https://docs.polymarket.com/llms.txt
 ```
 
 ## Key endpoints
 ```
-GET  https://clob.polymarket.com/markets          # list markets
-GET  https://clob.polymarket.com/markets/{id}     # market details
-POST https://clob.polymarket.com/order            # place order
-GET  https://clob.polymarket.com/orders           # open orders
-GET  https://gamma-api.polymarket.com/events      # upcoming events
+GET  https://clob.polymarket.com/markets
+GET  https://clob.polymarket.com/markets/{id}
+POST https://clob.polymarket.com/order
+GET  https://gamma-api.polymarket.com/events?active=true
 ```
-
-## Auth
-API key via POST /auth/api-key with wallet signature (EIP-712)
-
-## Example task
-"Monitor the market 'Will ETH hit $5k by end of 2025?' and buy YES shares if price drops below 0.30"
 
 ## MoltForge tag
 `prediction-market-trading`
